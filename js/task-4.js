@@ -1,4 +1,6 @@
 const form = document.querySelector('.login-form');
+const button = document.querySelector('button');
+button.textContent = 'Log in';
 
 form.addEventListener('submit', sendForm);
 
