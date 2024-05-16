@@ -4,8 +4,9 @@ const input = document.getElementById('name-input');
 
 input.addEventListener('input', event => {
   const text = event.target.value;
-  if (text === '') {
+  if (text.trim() === '') {
     span.textContent = 'Anonymous';
+  } else {
+    span.textContent = text.trim();
   }
-  span.textContent = text.trim();
 });

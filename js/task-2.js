@@ -27,7 +27,7 @@ const images = [
 
 const ul = document.querySelector('.gallery');
 
-images.forEach(image => {
+for (const image of images) {
   const li = document.createElement('li');
   li.classList.add('img-item');
   const img = document.createElement('img');
@@ -36,4 +36,4 @@ images.forEach(image => {
 
   li.append(img);
   ul.append(li);
-});
+}

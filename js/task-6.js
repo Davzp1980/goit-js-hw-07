@@ -21,6 +21,7 @@ function createBoxes(amount) {
   if (amount >= 1 && amount <= 100) {
     let width = 20;
     let height = 20;
+    const boxes = document.createDocumentFragment();
     for (let i = 0; i < amount; i++) {
       const newDiv = document.createElement('div');
       newDiv.style.width = `${width + 10}px`;
@@ -29,18 +30,12 @@ function createBoxes(amount) {
       newDiv.classList.add('new-div');
       width += 10;
       height += 10;
-      mainDiv.append(newDiv);
+      boxes.appendChild(newDiv);
     }
-  }
-}
-
-function destroyBoxes(amount) {
-  for (let i = 0; i < amount; i++) {
-    const newDiv = document.querySelector('.new-div');
-    newDiv.remove();
+    mainDiv.append(boxes);
   }
 }
 
 destroyBotton.addEventListener('focus', () => {
-  destroyBoxes(data);
+  mainDiv.innerHTML = '';
 });
