@@ -27,13 +27,17 @@ const images = [
 
 const ul = document.querySelector('.gallery');
 
-for (const image of images) {
-  const li = document.createElement('li');
-  li.classList.add('img-item');
-  const img = document.createElement('img');
-  img.src = image.url;
-  img.alt = image.alt;
-
-  li.append(img);
-  ul.append(li);
+function imageTemplate(obj) {
+  return `<li class="img-item">
+  <img
+    src="${obj.url}"
+    alt="${obj.alt}"
+  />
+</li>`;
 }
+
+function imagesTamplate(arr) {
+  return arr.map(imageTemplate).join('');
+}
+
+ul.innerHTML = imagesTamplate(images);
